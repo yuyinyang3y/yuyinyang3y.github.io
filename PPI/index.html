@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Gripper Keypose and Object Pointflow as Interfaces for Bimanual Robotic Manipulation">
+  <meta name="keywords" content="Robotic Manipulation, Language Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PPI</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV4ZJ9PVSV"></script>  
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FV4ZJ9PVSV');
+  </script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body onload="updateInteractive();">
+<body onload="updatecrossInteractive();"></body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-fullhd">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Predictive Inverse Dynamics Models <br> are Scalable Learners for Robotic Manipulation</h1>
+          <h3 class="title is-4 conference-authors"><a target="_blank" >ICLR 2025 Oral</a></h3>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a target="_blank" href="https://github.com/yuyinyang3y">Yuyin Yang</a><sup>*,1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://healorcai.github.io/">Zetao Cai</a><sup>*,1,3</sup>,
+            </span>
+            <span class="author-block">
+                <a target="_blank" href="https://github.com/Nimolty?tab=overview&from=2024-01-01&to=2024-01-31">Yang Tian</a><sup>*,1,4</sup>,
+              </span>
+            <span class="author-block">
+              <a target="_blank" href="https://scholar.google.com/citations?user=kYrUfMoAAAAJ&hl=zh-CN">Jia Zeng</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://oceanpang.github.io/">Jiangmiao Pang</a><sup>&#x2709;1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Shanghai AI Lab,</span>
+            <span class="author-block"><sup>2</sup>Fudan University,</span>
+            <span class="author-block"><sup>3</sup>Zhejiang University,</span>
+            <span class="author-block"><sup>4</sup>Peking University,</span>
+            <span class="author-block"><sup>5</sup>School of Software & Microelectronics, Peking University,</span>
+            <span class="author-block"><sup>6</sup>Chinese University of Hong Kong,</span>
+            <span class="author-block"><sup>*</sup>Equal Contribution,</span>
+            <span class="author-block"><sup>&#x2709;</sup>Corresponding Author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a target="_blank" href="paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+            <!-- Arxiv Link. -->
+            <span class="link-block">
+              <a target="_blank" href="https://yuyinyang3y.github.io/PPI"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file"></i>
+                </span>
+                <span>ArXiv</span>
+              </a>
+            </span>
+
+            <!-- Video Link. -->
+            <span class="link-block">
+              <a target="_blank" href="demo.mp4"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                </span>
+                <span>Video</span>
+              </a>
+            </span>
+
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a target="_blank" href="https://yuyinyang3y.github.io/PPI"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+                </a>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+    <!-- Animation. -->
+    <div class="rows is-centered has-text-centered ">
+      <div class="row is-full-width">
+        <h2 class="title is-3">Highlight</h2>
+
+        <!-- Interpolating. -->
+        <div class="content has-text-justified">
+        <!-- <br> -->
+        </div>
+        <img src="media/figures/seer_teaser1.jpg" class="interpolation-image" />
+        </br>
+        </br>
+          <p class="content has-text-justified" style="font-size: 20px;">
+            <b>End-to-End PIDM:</b> We propose an end-to-end model <b>Seer</b> 
+            that predicts actions using inverse dynamics models conditioned on the robot's forecasted visual states, 
+            termed as Predictive Inverse Dynamics Models (PIDM).
+          </p>
+          <p class="content has-text-justified" style="font-size: 20px;">
+            <b>Scalability:</b> <b>Seer</b> is initially pre-trained on large-scale robotic datasets, such as DROID, 
+            and can be adapted to downstream tasks with a little fine-tuning data. With an increasing model size,
+            <b>Seer</b> achieves a better performance.
+          </p>
+          <p class="content has-text-justified" style="font-size: 20px;">
+            <b>Effectiveness:</b> <b>Seer</b> outperforms state-of-the-art methods across both simulation and real-world experiments.
+            It demonstrates superior generalization for novel objects, lighting conditions, and environments under high-intensity disturbances. Notably, Seer sets a new state-of-the-art on CALVIN ABC-D benchmark, achieving an average length of <b>4.28</b>.
+          </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="highlight demo">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/Highlight/bg_one_take_cpp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/Highlight/wipe_board_one_take_cpp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/Highlight/bg2_one_take_cpp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/Highlight/bowl_one_take_cpp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/Highlight/cup_one_take_cpp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+
+
+    <!-- Animation. -->
+    <div class="rows is-centered">
+      <div class="row is-full-width">
+        <h2 class="title is-3">Pipeline of Seer</h2>
+
+        <!-- Interpolating. -->
+        <div class="content has-text-justified" style="font-size: 20px;">
+        <!-- <br> -->
+        </div>
+        <img src="media/figures/seer_method.jpg" class="interpolation-image" />
+        </br>
+        </br>
+          <p class="content has-text-justified">
+            <b>Seer</b> consists of three  parts: Multi-Modal Encoder, Conditional Visual Foresight and Inverse Dynamics Prediction.
+            In Multi-Modal Encoder, <b>Seer</b> incorporates the foresight token <b>[FRS]</b> and the action token <b>[INV]</b>. 
+            Both tokens attend to the RGB images, language tokens, and robot state tokens, with <b>[INV]</b> also attending to <b>[FRS]</b>.
+            In Conditional Visual Foresight, the encoded <b>[FRS]</b>, along with new mask tokens, aims to reconstruct future RGB images. 
+            In Inverse Dynamics Prediction, the encoded <b>[INV]</b> and other tokens speculate intermediary actions.
+          </p>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+
+
+    <!-- Animation. -->
+    <div class="rows is-centered">
+      <div class="row is-full-width">
+        <h2 class="title is-3">Real World Wipe Board Task</h2>
+        <div class="content has-text-justified">
+          <p class="content has-text-justified" style="font-size: 20px;">
+            In this task, the robot needs to (1) grasp the brush, and (2) sweep all the chocolate balls into the dustpan.<br>
+            <b>Seer</b> is capable of: <br>
+            (0:04) wiping multi clusters of chocolate balls. <br>
+            (0:11) remaining still when nothing left on the board. <br> 
+            (0:13) keep wiping when placing additional chocolate balls. <br>
+            (0:19) keep wiping when placing new chocolate balls. <br>
+            (0:22) wiping all the randomly scattered objects.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="wipe_board_one_take_cpp" controls loop muted width="100%">
+            <source src="media/videos/Highlight/wipe_board_one_take_cpp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+
+
+    <!-- Animation. -->
+    <div class="rows is-centered">
+      <div class="row is-full-width">
+        <h2 class="title is-3">Real World Stack Cups Task</h2>
+        <div class="content has-text-justified">
+          <p class="content has-text-justified" style="font-size: 20px;">
+            In this task, the robot needs to (1) pick the middle
+            cup, (2) cover the small one, (3) pick the big one, and (4) cover the middle one. <br>
+            <b>Seer</b> demonstrates: <br>
+            (0:09) strong tracking ability and position generalization. <br>
+            (0:21) re-covering cups under disturbation.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="wipe_board_one_take_cpp" controls loop muted width="100%">
+            <source src="media/videos/Highlight/cup_one_take_cpp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+
+
+    <!-- Animation. -->
+    <div class="rows is-centered">
+      <div class="row is-full-width">
+        <h2 class="title is-3">Real World Flip White Bowl Task</h2>
+        <div class="content has-text-justified">
+          <p class="content has-text-justified" style="font-size: 20px;">
+            In this task, the robot needs to (1) pick an
+            overturned bowl, and (2) place it on the coaster. <br>
+            <b>Seer</b> is robust against: <br>
+            (0:09) flashing lights. <br>
+            (0:21) distractions with identical shapes.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="wipe_board_one_take_cpp" controls loop muted width="100%">
+            <source src="media/videos/Highlight/bowl_one_take_cpp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+    <!-- Animation. -->
+    <div class="rows is-centered">
+      <div class="row is-full-width">
+        <h2 class="title is-3">Generalization</h2>
+        <div class="content has-text-justified">
+          <p class="content has-text-justified" style="font-size: 20px;">
+            <b>Seer</b> could handle novel objects in wiping board.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="board0" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/board0_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                In Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="spdh-cross-video" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/board1_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="spdh-cross-video" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/board2_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="spdh-cross-video" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/board3_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+        </div>
+
+
+        <div class="content has-text-justified">
+          <p class="content has-text-justified" style="font-size: 20px;">
+            <b>Seer</b> perform well in different lightning conditions.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl0" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/drawer0_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                In Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl1" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/drawer1_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl2" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/drawer2_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl3" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/drawer3_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+        </div>
+
+
+
+        <div class="content has-text-justified">
+          <p class="content has-text-justified" style="font-size: 20px;">
+            <b>Seer</b> is robust against dramatic background changes.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <img src="media/videos/Generalization/bg_0.jpg" width="100%" height="100%" />
+              <p style="text-align:center">
+                In Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl1" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/bg1_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl2" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/bg2_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl3" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/bg3_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+        </div>
+
+
+        <div class="content has-text-justified">
+          <p class="content has-text-justified" style="font-size: 20px;">
+            <b>Seer</b> is robust against visual distractions.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl0" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/bowl0_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                In Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl1" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/bowl1_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl2" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/bowl2_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl3" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/bowl3_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="columns">
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl0" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/funny0_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl1" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/funny1_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl2" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/funny2_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <p style="text-align:center;">
+              <video id="bowl3" width="100%" height="100%" controls autoplay loop muted>
+                <source src="media/videos/Generalization/funny3_cp.mp4" type="video/mp4">
+              </video>
+              <p style="text-align:center">
+                Out of Distribution
+              </p>
+            </p>
+          </div>
+        </div>
+
+
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+    <!-- Animation. -->
+    <div class="rows is-centered">
+      <div class="row is-full-width">
+        <h2 class="title is-3">Simulation Results on CALVIN ABC-D</h2>
+
+        <!-- Interpolating. -->
+        <div class="content has-text-justified">
+        <!-- <br> -->
+        </div>
+        <img src="media/figures/calvin.jpg" class="interpolation-image" />
+        </br>
+        </br>
+          <p class="content has-text-justified" style="font-size: 20px;">
+            <b>Seer</b> has achieved the state-of-the-art performance on the CALVIN ABC-D benchmark.
+            Furthermore, it shows a strong scalability and data efficiency.
+          </p>
+    </div>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a href="https://github.com/voxposer/voxposer.github.io">VoxPoser</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
