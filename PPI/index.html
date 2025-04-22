@@ -3,20 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Gripper Keypose and Object Pointflow as Interfaces for Bimanual Robotic Manipulation">
-  <meta name="keywords" content="Robotic Manipulation, Language Models">
+        content="Gripper Keypose and Object Pointflow as Interfaces for Bimanual Robotic Manipulation.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PPI</title>
+  <title>Gripper Keypose and Object Pointflow as Interfaces for Bimanual Robotic Manipulation</title>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV4ZJ9PVSV"></script>  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
-    gtag('config', 'G-FV4ZJ9PVSV');
+    gtag('config', 'G-PYVRSFMDRL');
   </script>
-
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -24,591 +27,512 @@
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <!-- <link rel="stylesheet" href="./static/css/fontawesome.all.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/ppi.jpg">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"  ></script>
+  <script src="https://kit.fontawesome.com/19914a84eb.js" crossorigin="anonymous"></script>
+  <!-- <script defer src="./static/js/fontawesome.all.min.js"></script> -->
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
-<body onload="updateInteractive();">
-<body onload="updatecrossInteractive();"></body>
+<body>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-fullhd">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Gripper Keypose and Object Pointflow <br> as Interfaces for Bimanual Robotic Manipulation</h1>
-          <h3 class="title is-4 conference-authors"><a target="_blank" >RSS 2025</a></h3>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a target="_blank" href="https://github.com/yuyinyang3y">Yuyin Yang</a><sup>*,1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a target="_blank" href="https://healorcai.github.io/">Zetao Cai</a><sup>*,1,3</sup>,
-            </span>
-            <span class="author-block">
-                <a target="_blank" href="https://github.com/Nimolty?tab=overview&from=2024-01-01&to=2024-01-31">Yang Tian</a><sup>*,1,4</sup>,
-              </span>
-            <span class="author-block">
-              <a target="_blank" href="https://scholar.google.com/citations?user=kYrUfMoAAAAJ&hl=zh-CN">Jia Zeng</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a target="_blank" href="https://oceanpang.github.io/">Jiangmiao Pang</a><sup>&#x2709;1</sup>,
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Shanghai AI Lab,</span>
-            <span class="author-block"><sup>2</sup>Fudan University,</span>
-            <span class="author-block"><sup>3</sup>Zhejiang University,</span>
-            <span class="author-block"><sup>4</sup>Peking University,</span>
-            <span class="author-block"><sup>*</sup>Equal Contribution,</span>
-            <span class="author-block"><sup>&#x2709;</sup>Corresponding Author</span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-fullhd">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
+            <h1 class="title is-1 publication-title">Gripper Keypose and Object Pointflow <br> as Interfaces for Bimanual Robotic Manipulation</h1>
+            <h3 class="title is-4 conference-authors"><a target="_blank" >RSS 2025</a></h3>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a target="_blank" href="https://github.com/yuyinyang3y">Yuyin Yang</a><sup>*,1,2</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank" href="https://github.com/healorcai">Zetao Cai</a><sup>*,1,3</sup>,
+              </span>
+              <span class="author-block">
+                  <a target="_blank" href="https://github.com/Nimolty?tab=overview&from=2024-01-01&to=2024-01-31">Yang Tian</a><sup>1,4</sup>,
+                </span>
+              <span class="author-block">
+                <a target="_blank" href="https://scholar.google.com/citations?user=kYrUfMoAAAAJ&hl=zh-CN">Jia Zeng</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank" href="https://oceanpang.github.io/">Jiangmiao Pang</a><sup>&#x2709;1</sup>,
+              </span>
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Shanghai AI Lab,</span>
+              <span class="author-block"><sup>2</sup>Fudan University,</span>
+              <span class="author-block"><sup>3</sup>Zhejiang University,</span>
+              <span class="author-block"><sup>4</sup>Peking University,</span>
+              <span class="author-block"><sup>*</sup>Equal Contribution,</span>
+              <span class="author-block"><sup>&#x2709;</sup>Corresponding Author</span>
+            </div>
+  
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <!-- <a target="_blank" href="paper.pdf" -->
+                  <a target="_blank" href="https://yuyinyang3y.github.io/PPI"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+  
+              <!-- Arxiv Link. -->
               <span class="link-block">
-                <a target="_blank" href="paper.pdf"
+                <a target="_blank" href="https://yuyinyang3y.github.io/PPI"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+                      <i class="fas fa-file"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>ArXiv</span>
                 </a>
               </span>
-
-            <!-- Arxiv Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://yuyinyang3y.github.io/PPI"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fas fa-file"></i>
-                </span>
-                <span>ArXiv</span>
-              </a>
-            </span>
-
-            <!-- Video Link. -->
-            <span class="link-block">
-              <a target="_blank" href="demo.mp4"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fab fa-youtube"></i>
-                </span>
-                <span>Video</span>
-              </a>
-            </span>
-
-            <!-- Code Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://yuyinyang3y.github.io/PPI"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fab fa-github"></i>
-                </span>
-                <span>Code</span>
+  
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a target="_blank" href="demo.mp4"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
                 </a>
-            </span>
+              </span> -->
+  
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://yuyinyang3y.github.io/PPI"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://yuyinyang3y.github.io/PPI"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-database"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container is-max-widescreen">
-    <div class="rows">
-    <!-- Animation. -->
-    <div class="rows is-centered has-text-centered ">
-      <div class="row is-full-width">
-        <h2 class="title is-3">Highlight</h2>
-
-        <!-- Interpolating. -->
-        <div class="content has-text-justified">
-        <!-- <br> -->
+  <section class="section">
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered" style="max-width: 1000px; margin: 0 auto;">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-2">Video</h2> -->
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/L_RraC-AFQE?si=Bx2JNijq1F8JMmAF"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
-        <img src="media/figures/seer_teaser1.jpg" class="interpolation-image" />
-        </br>
-        </br>
-          <p class="content has-text-justified" style="font-size: 20px;">
-            <b>End-to-End PIDM:</b> We propose an end-to-end model <b>Seer</b> 
-            that predicts actions using inverse dynamics models conditioned on the robot's forecasted visual states, 
-            termed as Predictive Inverse Dynamics Models (PIDM).
-          </p>
-          <p class="content has-text-justified" style="font-size: 20px;">
-            <b>Scalability:</b> <b>Seer</b> is initially pre-trained on large-scale robotic datasets, such as DROID, 
-            and can be adapted to downstream tasks with a little fine-tuning data. With an increasing model size,
-            <b>Seer</b> achieves a better performance.
-          </p>
-          <p class="content has-text-justified" style="font-size: 20px;">
-            <b>Effectiveness:</b> <b>Seer</b> outperforms state-of-the-art methods across both simulation and real-world experiments.
-            It demonstrates superior generalization for novel objects, lighting conditions, and environments under high-intensity disturbances. Notably, Seer sets a new state-of-the-art on CALVIN ABC-D benchmark, achieving an average length of <b>4.28</b>.
-          </p>
+      </div>
     </div>
+    <!--/ Paper video. -->
+  </section>
+
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <div class="rows">
+      <!-- Animation. -->
+      <div class="rows is-centered has-text-centered ">
+        <div class="row is-full-width">
+          <h2 class="title is-2 has-text-centered is-size-5-mobile title-with-lines">Overview</h2>
+  
+          <!-- Interpolating. -->
+          <div class="content has-text-justified">
+          <!-- <br> -->
+          </div>
+          <img src="./static/images/ppi_teaser.png" class="interpolation-image" />
+          </br>
+          </br>
+            <p class="content has-text-justified" style="font-size: 20px;">
+              <b>PPI (keyPose and Pointflow Interface)</b> is an end-to-end framework which integrates the prediction of 
+              target gripper poses and object pointflow with the continuous actions estimation. 
+            </p>
+            <p class="content has-text-justified" style="font-size: 20px;">
+              In contrast to (i) keyframe-based policies, which excel in spatial localization but struggle with movement restrictions (e.g.,
+              curved motion and collision-free actions), and (ii) continuous-action-based policies, which accommodate diverse trajectories
+              but lack strong perception, 
+              <b>PPI</b> enable the model to effectively attend to the target manipulation area, while the overall framework guides diverse
+              and collision-free trajectories.
+            </p>
+            <p class="content has-text-justified" style="font-size: 20px;">
+              By combining interface predictions with continuous actions estimation, PPI demonstrates superior
+              performance in diverse bimanual manipulation tasks, providing enhanced <b>spatial localization</b> and satisfying flexibility in
+              handling <b>movement restrictions</b>.
+            </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <div class="rows">
+      <!-- Animation. -->
+      <div class="rows is-centered has-text-centered ">
+        <div class="row is-full-width">
+          <h2 class="title is-2 has-text-centered is-size-5-mobile title-with-lines">Method</h2>
+          <!-- <h2 class="title is-3">Method</h2> -->
+  
+          <!-- Interpolating. -->
+          <div class="content has-text-justified">
+          <!-- <br> -->
+          </div>
+          <img src="./static/images/ppi_method.png" class="interpolation-image" />
+          </br>
+          </br>
+            <p class="content has-text-justified" style="font-size: 20px;">
+              <b>PPI</b> consists of three components: 
+              (a) <b>Perception.</b> PPI first construct a 3D semantic neural field and sample initial query points for pointflow prediction. 
+              (b) <b>Interface.</b> Next, two intermediate interfaces are defined: <b>target gripper poses</b> and <b>object pointflow</b>. 
+              (c) <b>Prediction.</b> Finally, a diffusion transformer incorporates robot proprio tokens, scene tokens, language
+              tokens, pointflow query tokens and action tokens with gaussian noise. Using a carefully designed unidirectional
+              attention, the model progressively denoises action predictions conditioned on the interfaces.
+            </p>
+      </div>
+    </div>
+  </section>
+
+
+
+<section class="section is-small">
+  <div class="container is-max-widescreen">
+
+  
+    <h2 class="title is-2 has-text-centered is-size-5-mobile title-with-lines">Real World Experiments </h2>
+
+    <h3 class="title is-3 has-text-centered is-size-5-mobile">Four Main Tasks</h3>
+
+    <div class="columns is-multiline">
+      <div class="column is-half">
+        <div class="video-container has-text-centered">
+          <video controls autoplay muted loop playsinline height="100%" style="width: 100%;">
+            <source src="./static/videos/carry.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered mt-2" style="font-weight: bold;">Carry the Tray</p>
+        </div>
+      </div>
+      
+      <div class="column is-half">
+        <div class="video-container has-text-centered">
+          <video controls autoplay muted loop playsinline height="100%" style="width: 100%;">
+            <source src="./static/videos/handover_real.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered mt-2" style="font-weight: bold;">Handover and Insert the Plate</p>
+        </div>
+      </div>
+      
+      <div class="column is-half">
+        <div class="video-container has-text-centered">
+          <video controls autoplay muted loop playsinline height="100%" style="width: 100%;">
+            <source src="./static/videos/wipe.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered mt-2" style="font-weight: bold;">Wipe the Plate</p>
+        </div>
+      </div>
+      
+      <div class="column is-half">
+        <div class="video-container has-text-centered">
+          <video controls autoplay muted loop playsinline height="100%" style="width: 100%;">
+            <source src="./static/videos/scan.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered mt-2" style="font-weight: bold;">Scan the Bottle</p>
+        </div>
+      </div>
+
+      <br>
+
+      <!-- <div class="has-text-centered" style="margin: 2rem 0; width: 100%;">
+        <button id="show-extra-tasks" class="button is-dark is-medium" style="margin: 0 auto;">
+          <span class="button-text"><strong>Show Extra Tasks</strong></span>
+          <span class="icon">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </button>
+      </div> -->
+  
+      <div class="has-text-centered" style="margin: 2rem 0; width: 100%; background-color: #f5f5f5; padding: 1.5rem; border-radius: 6px;">
+        <button id="show-extra-tasks" class="button is-dark is-medium" style="margin: 0 auto;">
+          <span><strong>Show Extra Tasks</strong></span>
+          <span class="icon">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </button>
+      
+        <div id="extra-tasks" class="columns is-multiline" style="display: none; margin-top: 1.5rem;">
+          <div class="column is-half">
+            <div class="video-container has-text-centered">
+              <video controls autoplay muted loop playsinline height="100%" style="width: 100%;">
+                <source src="./static/videos/wear.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered mt-2" style="font-weight: bold;">Wear the Scarf</p>
+            </div>
+          </div>
+          
+          <div class="column is-half">
+            <div class="video-container has-text-centered">
+              <video controls autoplay muted loop playsinline height="100%" style="width: 100%;">
+                <source src="./static/videos/press.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered mt-2" style="font-weight: bold;">Press the Cap of Bottle</p>
+            </div>
+          </div>
+          
+          <div class="column is-half">
+            <div class="video-container has-text-centered">
+              <video controls autoplay muted loop playsinline height="100%" style="width: 100%;">
+                <source src="./static/videos/scan_single_90.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered mt-2" style="font-weight: bold;">Scan the Bottle with Single Arm</p>
+            </div>
+          </div>
+          
+          <div class="column is-half">
+            <div class="video-container has-text-centered">
+              <video controls autoplay muted loop playsinline height="100%" style="width: 100%;">
+                <source src="./static/videos/scan_single_45.mp4" type="video/mp4">
+              </video>
+              <p class="has-text-centered mt-2" style="font-weight: bold;">Scan the Bottle with Single Arm</p>
+            </div>
+          </div> 
+        </div>
+      </div>
+
+      <br>
+
+      <div class="container" >
+        <h3 class="title is-3 has-text-centered is-size-5-mobile">Generalization</h3>
+      </div>
+
+      <div class="columns is-multiline" style="max-width: 1200px; margin: 0 auto;">
+
+
+          <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <video controls muted loop playsinline autoplay>
+                <source src="./static/videos/carry_6cubes.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Object Interference</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <video controls muted loop playsinline autoplay>
+                <source src="./static/videos/carry_bottle.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Object Interference</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <video controls muted loop playsinline autoplay>
+                <source src="./static/videos/hand_flash.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Lighting Background Changes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <video controls muted loop playsinline autoplay>
+                <source src="./static/videos/scan_cool.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Object Interference & Background Changes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <video controls muted loop playsinline autoplay>
+                <source src="./static/videos/scan_unseen.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Unseen Object</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <video controls muted loop playsinline autoplay>
+                <source src="./static/videos/wipe_cubes.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Object Interference</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
   </div>
+
 </section>
 
 
-<section class="highlight demo">
-  <div class="hero-body">
+
+
+<section class="section is-small">
+  <div class="container is-max-widescreen">
+    
+    <h2 class="title is-2 has-text-centered is-size-5-mobile title-with-lines">Simulation Experiments </h2>
+
+    <h3 class="title is-3 has-text-centered ">Ablation Study on RLBench2</h3>
+    <img src="./static/images/ablation.png" class="interpolation-image" />
+    <ul style="list-style-type: disc;">
+      <li>Relying solely on either keyframe or continuous actions is insufficient for general manipulation tasks.</li>
+      <li>Conditioning on separate interfaces improves performance, likely due to the local spatial features they provide. </li>
+      <li>Combining both interfaces yields further gains, highlighting the synergy between keypose and pointflow in enhancing performance on downstream tasks. </li>
+      <li>Less number of keyframes will reduce the interface’s effectiveness and lead to lower success rates.</li>
+    </ul>
+</section>
+
+<br>
+    
+<h3 class="title is-3 has-text-centered ">Interfaces Visualization in Simulation</h3>
+
+<section class="hero is-light is-small">
+  <div class="hero-body ">
     <div class="container">
+
       <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-          <video poster="" autoplay muted loop height="100%">
-            <source src="media/videos/Highlight/bg_one_take_cpp.mp4"
+        <div class="item item-box">
+          <video poster="" id="box" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/box.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item">
-          <video poster="" autoplay muted loop height="100%">
-            <source src="media/videos/Highlight/wipe_board_one_take_cpp.mp4"
+        <div class="item item-drawer">
+          <video poster="" id="drawer" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/drawer.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item">
-          <video poster="" autoplay muted loop height="100%">
-            <source src="media/videos/Highlight/bg2_one_take_cpp.mp4"
+        <div class="item item-dustpan">
+          <video poster="" id="dustpan" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dustpan.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item">
-          <video poster="" autoplay muted loop height="100%">
-            <source src="media/videos/Highlight/bowl_one_take_cpp.mp4"
+        <div class="item item-fridge">
+          <video poster="" id="fridge" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fridge.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item">
-          <video poster="" autoplay muted loop height="100%">
-            <source src="media/videos/Highlight/cup_one_take_cpp.mp4"
+        <div class="item item-handover_easy">
+          <video poster="" id="handover_easy" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/handover_easy.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-handover">
+          <video poster="" id="handover" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/handover.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-laptop">
+          <video poster="" id="laptop" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/laptop.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-ball">
+          <video poster="" id="ball" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ball.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-tray">
+          <video poster="" id="tray" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/tray.mp4"
                     type="video/mp4">
           </video>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="section">
-  <div class="container is-max-widescreen">
-
-    <div class="rows">
-
-
-    <!-- Animation. -->
-    <div class="rows is-centered">
-      <div class="row is-full-width">
-        <h2 class="title is-3">Pipeline of Seer</h2>
-
-        <!-- Interpolating. -->
-        <div class="content has-text-justified" style="font-size: 20px;">
-        <!-- <br> -->
-        </div>
-        <img src="media/figures/seer_method.jpg" class="interpolation-image" />
-        </br>
-        </br>
-          <p class="content has-text-justified">
-            <b>Seer</b> consists of three  parts: Multi-Modal Encoder, Conditional Visual Foresight and Inverse Dynamics Prediction.
-            In Multi-Modal Encoder, <b>Seer</b> incorporates the foresight token <b>[FRS]</b> and the action token <b>[INV]</b>. 
-            Both tokens attend to the RGB images, language tokens, and robot state tokens, with <b>[INV]</b> also attending to <b>[FRS]</b>.
-            In Conditional Visual Foresight, the encoded <b>[FRS]</b>, along with new mask tokens, aims to reconstruct future RGB images. 
-            In Inverse Dynamics Prediction, the encoded <b>[INV]</b> and other tokens speculate intermediary actions.
-          </p>
 
     </div>
   </div>
+
 </section>
+ 
 
 
-
-<section class="section">
-  <div class="container is-max-widescreen">
-
-    <div class="rows">
-
-
-    <!-- Animation. -->
-    <div class="rows is-centered">
-      <div class="row is-full-width">
-        <h2 class="title is-3">Real World Wipe Board Task</h2>
-        <div class="content has-text-justified">
-          <p class="content has-text-justified" style="font-size: 20px;">
-            In this task, the robot needs to (1) grasp the brush, and (2) sweep all the chocolate balls into the dustpan.<br>
-            <b>Seer</b> is capable of: <br>
-            (0:04) wiping multi clusters of chocolate balls. <br>
-            (0:11) remaining still when nothing left on the board. <br> 
-            (0:13) keep wiping when placing additional chocolate balls. <br>
-            (0:19) keep wiping when placing new chocolate balls. <br>
-            (0:22) wiping all the randomly scattered objects.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="wipe_board_one_take_cpp" controls loop muted width="100%">
-            <source src="media/videos/Highlight/wipe_board_one_take_cpp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-    </div>
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
   </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-widescreen">
-
-    <div class="rows">
-
-
-    <!-- Animation. -->
-    <div class="rows is-centered">
-      <div class="row is-full-width">
-        <h2 class="title is-3">Real World Stack Cups Task</h2>
-        <div class="content has-text-justified">
-          <p class="content has-text-justified" style="font-size: 20px;">
-            In this task, the robot needs to (1) pick the middle
-            cup, (2) cover the small one, (3) pick the big one, and (4) cover the middle one. <br>
-            <b>Seer</b> demonstrates: <br>
-            (0:09) strong tracking ability and position generalization. <br>
-            (0:21) re-covering cups under disturbation.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="wipe_board_one_take_cpp" controls loop muted width="100%">
-            <source src="media/videos/Highlight/cup_one_take_cpp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-widescreen">
-
-    <div class="rows">
-
-
-    <!-- Animation. -->
-    <div class="rows is-centered">
-      <div class="row is-full-width">
-        <h2 class="title is-3">Real World Flip White Bowl Task</h2>
-        <div class="content has-text-justified">
-          <p class="content has-text-justified" style="font-size: 20px;">
-            In this task, the robot needs to (1) pick an
-            overturned bowl, and (2) place it on the coaster. <br>
-            <b>Seer</b> is robust against: <br>
-            (0:09) flashing lights. <br>
-            (0:21) distractions with identical shapes.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="wipe_board_one_take_cpp" controls loop muted width="100%">
-            <source src="media/videos/Highlight/bowl_one_take_cpp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-widescreen">
-
-    <div class="rows">
-    <!-- Animation. -->
-    <div class="rows is-centered">
-      <div class="row is-full-width">
-        <h2 class="title is-3">Generalization</h2>
-        <div class="content has-text-justified">
-          <p class="content has-text-justified" style="font-size: 20px;">
-            <b>Seer</b> could handle novel objects in wiping board.
-          </p>
-        </div>
-        <div class="columns">
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="board0" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/board0_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                In Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="spdh-cross-video" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/board1_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="spdh-cross-video" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/board2_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="spdh-cross-video" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/board3_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-        </div>
-
-
-        <div class="content has-text-justified">
-          <p class="content has-text-justified" style="font-size: 20px;">
-            <b>Seer</b> perform well in different lightning conditions.
-          </p>
-        </div>
-        <div class="columns">
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl0" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/drawer0_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                In Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl1" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/drawer1_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl2" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/drawer2_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl3" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/drawer3_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-        </div>
-
-
-
-        <div class="content has-text-justified">
-          <p class="content has-text-justified" style="font-size: 20px;">
-            <b>Seer</b> is robust against dramatic background changes.
-          </p>
-        </div>
-        <div class="columns">
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <img src="media/videos/Generalization/bg_0.jpg" width="100%" height="100%" />
-              <p style="text-align:center">
-                In Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl1" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/bg1_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl2" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/bg2_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl3" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/bg3_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-        </div>
-
-
-        <div class="content has-text-justified">
-          <p class="content has-text-justified" style="font-size: 20px;">
-            <b>Seer</b> is robust against visual distractions.
-          </p>
-        </div>
-        <div class="columns">
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl0" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/bowl0_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                In Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl1" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/bowl1_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl2" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/bowl2_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl3" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/bowl3_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-        </div>
-
-        <br>
-
-        <div class="columns">
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl0" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/funny0_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl1" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/funny1_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl2" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/funny2_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-          <div class="column has-text-centered">
-            <p style="text-align:center;">
-              <video id="bowl3" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/videos/Generalization/funny3_cp.mp4" type="video/mp4">
-              </video>
-              <p style="text-align:center">
-                Out of Distribution
-              </p>
-            </p>
-          </div>
-        </div>
-
-
-
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-widescreen">
-    <div class="rows">
-    <!-- Animation. -->
-    <div class="rows is-centered">
-      <div class="row is-full-width">
-        <h2 class="title is-3">Simulation Results on CALVIN ABC-D</h2>
-
-        <!-- Interpolating. -->
-        <div class="content has-text-justified">
-        <!-- <br> -->
-        </div>
-        <img src="media/figures/calvin.jpg" class="interpolation-image" />
-        </br>
-        </br>
-          <p class="content has-text-justified" style="font-size: 20px;">
-            <b>Seer</b> has achieved the state-of-the-art performance on the CALVIN ABC-D benchmark.
-            Furthermore, it shows a strong scalability and data efficiency.
-          </p>
-    </div>
-  </div>
-</section>
+</section> -->
 
 
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column">
-        <div class="content has-text-centered">
+      <div class="column is-8">
+        <div class="content">
           <p>
-            Website template borrowed from <a href="https://github.com/voxposer/voxposer.github.io">VoxPoser</a>. 
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Thanks to <a href="https://nerfies.github.io/">Nerfies</a> for providing the template of this page.
           </p>
         </div>
       </div>
@@ -616,6 +540,52 @@
   </div>
 </footer>
 
+<script>
+  // 确保页面完全加载后执行
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      const showMoreButton = document.getElementById('show-extra-tasks');
+      const additionalDemos = document.getElementById('extra-tasks');
+      
+      if (showMoreButton && additionalDemos) {
+        console.log('Inline script: initializing button');
+        
+        // 确保初始状态正确
+        additionalDemos.style.display = 'none';
+        
+        // 如果按钮还没有事件监听器，添加一个
+        if (!showMoreButton.hasAttribute('data-inline-initialized')) {
+          showMoreButton.setAttribute('data-inline-initialized', 'true');
+          
+          showMoreButton.addEventListener('click', function() {
+            console.log('Inline script: button clicked');
+            const computedStyle = window.getComputedStyle(additionalDemos);
+            const isHidden = computedStyle.display === 'none';
+            
+            additionalDemos.style.display = isHidden ? 'flex' : 'none';
+            
+            const buttonText = showMoreButton.querySelector('span:first-child');
+            const buttonIcon = showMoreButton.querySelector('.fas');
+            
+            if (buttonText && buttonIcon) {
+              if (isHidden) {
+                buttonText.innerHTML = '<strong>Hide Extra Tasks</strong>';
+                buttonIcon.classList.remove('fa-chevron-down');
+                buttonIcon.classList.add('fa-chevron-up');
+              } else {
+                buttonText.innerHTML = '<strong>Show Extra Tasks</strong>';
+                buttonIcon.classList.remove('fa-chevron-up');
+                buttonIcon.classList.add('fa-chevron-down');
+              }
+            }
+          });
+        }
+      } else {
+        console.error('Inline script: Button or additional demos section not found');
+      }
+    }, 1000); // 延迟1秒确保DOM完全加载
+  });
+</script>
 
 </body>
 </html>

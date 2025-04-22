@@ -1,25 +1,3 @@
-window.HELP_IMPROVE_VIDEOJS = false;
-
-var INTERP_BASE = "https://homes.cs.washington.edu/~kpar/nerfies/interpolation/stacked";
-var NUM_INTERP_FRAMES = 240;
-
-var interp_images = [];
-function preloadInterpolationImages() {
-  for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
-    var path = INTERP_BASE + '/' + String(i).padStart(6, '0') + '.jpg';
-    interp_images[i] = new Image();
-    interp_images[i].src = path;
-  }
-}
-
-function setInterpolationImage(i) {
-  var image = interp_images[i];
-  image.ondragstart = function() { return false; };
-  image.oncontextmenu = function() { return false; };
-  $('#interpolation-image-wrapper').empty().append(image);
-}
-
-
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
     $(".navbar-burger").click(function() {
@@ -58,6 +36,13 @@ $(document).ready(function() {
     	});
     }
 
+    /*var player = document.getElementById('interpolation-video');
+    player.addEventListener('loadedmetadata', function() {
+      $('#interpolation-slider').on('input', function(event) {
+        console.log(this.value, player.duration);
+        player.currentTime = player.duration / 100 * this.value;
+      })
+    }, false);*/
     // preloadInterpolationImages();
 
     // $('#interpolation-slider').on('input', function(event) {
@@ -66,9 +51,101 @@ $(document).ready(function() {
     // setInterpolationImage(0);
     // $('#interpolation-slider').prop('max', NUM_INTERP_FRAMES - 1);
 
-    // bulmaSlider.attach();
+    bulmaSlider.attach();
 
-    document.getElementById("single-task-result-video").playbackRate = 2.0;
-    document.getElementById("multi-task-result-video").playbackRate = 2.0;
 })
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Button to show/hide additional demos
+  const showMoreButton = document.getElementById('show-extra-tasks');
+  const additionalDemos = document.getElementById('extra-tasks');
+  
+  // 添加调试信息
+  console.log('DOM loaded, initializing button functionality');
+  console.log('Button found:', !!showMoreButton);
+  console.log('Additional demos section found:', !!additionalDemos);
+  
+  if (showMoreButton && additionalDemos) {
+    // 确保初始状态正确
+    additionalDemos.style.display = 'none';
+    
+    // 设置初始按钮文本
+    const buttonText = showMoreButton.querySelector('span:first-child');
+    if (buttonText) {
+      buttonText.innerHTML = '<strong>Show Extra Tasks</strong>';
+    }
+    
+    showMoreButton.addEventListener('click', function(e) {
+      e.preventDefault(); // 防止默认行为
+      console.log('Button clicked');
+      
+      // 使用计算样式而不是内联样式来检查可见性
+      const computedStyle = window.getComputedStyle(additionalDemos);
+      const isHidden = computedStyle.display === 'none';
+      console.log('Is hidden:', isHidden);
+      
+      // Toggle visibility
+      additionalDemos.style.display = isHidden ? 'flex' : 'none';
+      
+      // Update button text and icon
+      const buttonText = showMoreButton.querySelector('span:first-child');
+      const buttonIcon = showMoreButton.querySelector('.fas');
+      
+      if (buttonText && buttonIcon) {
+        if (isHidden) {
+          buttonText.innerHTML = '<strong>Hide Extra Tasks</strong>';
+          buttonIcon.classList.remove('fa-chevron-down');
+          buttonIcon.classList.add('fa-chevron-up');
+        } else {
+          buttonText.innerHTML = '<strong>Show Extra Tasks</strong>';
+          buttonIcon.classList.remove('fa-chevron-up');
+          buttonIcon.classList.add('fa-chevron-down');
+        }
+      }
+    });
+    
+    console.log('Button event listener attached');
+  } else {
+    console.error('Button or additional demos section not found');
+  }
+  
+  // 添加备用初始化方法，以防DOMContentLoaded已经触发
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    console.log('Document already loaded, checking elements again');
+    setTimeout(function() {
+      const showMoreButton = document.getElementById('show-extra-tasks');
+      const additionalDemos = document.getElementById('extra-tasks');
+      
+      if (showMoreButton && additionalDemos && !showMoreButton.hasAttribute('data-initialized')) {
+        console.log('Initializing button after delay');
+        showMoreButton.setAttribute('data-initialized', 'true');
+        
+        // 确保初始状态正确
+        additionalDemos.style.display = 'none';
+        
+        showMoreButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          const computedStyle = window.getComputedStyle(additionalDemos);
+          const isHidden = computedStyle.display === 'none';
+          
+          additionalDemos.style.display = isHidden ? 'flex' : 'none';
+          
+          const buttonText = showMoreButton.querySelector('span:first-child');
+          const buttonIcon = showMoreButton.querySelector('.fas');
+          
+          if (buttonText && buttonIcon) {
+            if (isHidden) {
+              buttonText.innerHTML = '<strong>Hide Extra Tasks</strong>';
+              buttonIcon.classList.remove('fa-chevron-down');
+              buttonIcon.classList.add('fa-chevron-up');
+            } else {
+              buttonText.innerHTML = '<strong>Show Extra Tasks</strong>';
+              buttonIcon.classList.remove('fa-chevron-up');
+              buttonIcon.classList.add('fa-chevron-down');
+            }
+          }
+        });
+      }
+    }, 500);
+  }
+});
